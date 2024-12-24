@@ -5,6 +5,7 @@ import SignupPage from './pages/SignUpPage';
 import SettingPage from './pages/SettingPage';
 import ProfilePage from './pages/ProfilePage';
 import Layout from './layout/Layout';
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
 	return (
@@ -40,6 +41,8 @@ const App = () => {
 					<Route path='/login' element={<LoginPage />}></Route>
 				</Routes>
 			</BrowserRouter>
+			{/* toaster */}
+			<Toaster />
 		</div>
 	);
 };
