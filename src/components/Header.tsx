@@ -1,6 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuthStore } from '../store/useAuthStore';
 
 const Header = () => {
+	const { logout } = useAuthStore();
+	const navigate = useNavigate();
 	return (
 		<header className='flex justify-between items-center p-4 bg-gradient-to-br from-purple-400 via-pink-500 to-red-400 text-white'>
 			<h1 className='text-3xl font-bold'>
@@ -24,10 +27,10 @@ const Header = () => {
 						</Link>
 					</li>
 					<li>
-						<Link to={'/login'}>
+						<button type='button' onClick={() => logout(navigate)}>
 							<i className='fa-solid fa-right-from-bracket'></i>{' '}
 							Logout
-						</Link>
+						</button>
 					</li>
 				</ul>
 			</nav>

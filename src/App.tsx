@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignUpPage';
@@ -10,37 +10,35 @@ import { Toaster } from 'react-hot-toast';
 const App = () => {
 	return (
 		<div className='h-screen'>
-			<BrowserRouter>
-				<Routes>
-					<Route
-						path='/'
-						element={
-							<Layout>
-								<HomePage />
-							</Layout>
-						}
-					></Route>
-					<Route
-						path='/setting'
-						element={
-							<Layout>
-								<SettingPage />
-							</Layout>
-						}
-					></Route>
-					<Route
-						path='/profile'
-						element={
-							<Layout>
-								<ProfilePage />
-							</Layout>
-						}
-					></Route>
-					{/* login, signup */}
-					<Route path='/signup' element={<SignupPage />}></Route>
-					<Route path='/login' element={<LoginPage />}></Route>
-				</Routes>
-			</BrowserRouter>
+			<Routes>
+				<Route
+					path='/'
+					element={
+						<Layout>
+							<HomePage />
+						</Layout>
+					}
+				></Route>
+				<Route
+					path='/setting'
+					element={
+						<Layout>
+							<SettingPage />
+						</Layout>
+					}
+				></Route>
+				<Route
+					path='/profile'
+					element={
+						<Layout>
+							<ProfilePage />
+						</Layout>
+					}
+				></Route>
+				{/* login, signup */}
+				<Route path='/signup' element={<SignupPage />}></Route>
+				<Route path='/login' element={<LoginPage />}></Route>
+			</Routes>
 			{/* toaster */}
 			<Toaster />
 		</div>
